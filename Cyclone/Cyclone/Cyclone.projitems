@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{7E43876D-7201-4DB4-845A-808869D6472E}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Cyclone</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AppHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ISQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Journey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JourneyDB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BluetoothHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\JourneyHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\StatisticsHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\TemperatureHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Weather.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cyclone"
+             x:Class="Cyclone.MainPage">
+    <CarouselPage.BindingContext>
+        <local:AppHandler></local:AppHandler>
+    </CarouselPage.BindingContext>
+
+    <ContentPage>
+        <!--First Page : CYCLING-->
+        <ContentPage.Content>
+            <RelativeLayout BackgroundColor="#213233">
+                <!--HEADER--><!--CYCLING-->
+                <RelativeLayout Margin="5,10,5,5"                                
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <Label Text="CYCLING"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontBig}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">                           
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                </RelativeLayout>
+                <!--SPEED AND UNIT-->
+                <RelativeLayout Margin="15,10,15,5"
+                                BackgroundColor="#101A1C"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <Label Text="{Binding AHCyclingSpeed, StringFormat='{0:F1}'}"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontVeryBig}"      
+                           AnchorY="1"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="End"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8}">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <Label Text="{Binding AHSettingsMeasurementUnitTxt, StringFormat='{0}/h'}"                            
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}"  
+                           AnchorY="1"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                    </Label>
+                    <BoxView BackgroundColor="#69BCBO"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}">
+                    </BoxView>
+                    <Label Text="SPEED"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           Margin="0,0,5,0"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8, Constant=5}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                </RelativeLayout>
+                <!--DURATION AND DISTANCE-->
+                <RelativeLayout Margin="15,10,15,5"                                
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <RelativeLayout Margin="0,0,5,0" 
+                                    BackgroundColor="#101A1C"
+                                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                        <Label Text="DURATION"
+                               TextColor="#F7F7F7"
+                               FontSize="{Binding FontVerySmall}"
+                               Margin="5,0,0,0"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="StartAndExpand"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="framd.ttf#Franklin Gothic Medium"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <BoxView BackgroundColor="#69BCBO"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}">
+                        </BoxView>
+                        <!--BINDING DURATION-->
+                        <Label Text="{Binding AHCyclingDuration, StringFormat='{0:h\\:mm\\:ss\}'}"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           Margin="0,0,5,5"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.9}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                    </RelativeLayout>
+                    <RelativeLayout Margin="5,0,0,0" 
+                                    BackgroundColor="#101A1C"
+                                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
+                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                        <Label Text="DISTANCE"
+                               TextColor="#F7F7F7"
+                               FontSize="{Binding FontVerySmall}"
+                               Margin="5,0,0,0"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="StartAndExpand"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="framd.ttf#Franklin Gothic Medium"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <BoxView BackgroundColor="#69BCBO"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}">
+                        </BoxView>
+                        <!--BINDING DISTANCE-->
+                        <Label Text="{Binding AHCyclingDistance, StringFormat='{0:F1}'}"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           
+                           HorizontalOptions="End"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--BINDING UNIT-->
+                        <Label Text="{Binding AHSettingsMeasurementUnitTxt}"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <!--AVERAGE SPEED AND TEMPERATURE-->
+                <RelativeLayout Margin="15,10,15,5"                                
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <RelativeLayout Margin="0,0,5,0" 
+                                    BackgroundColor="#101A1C"
+                                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                        <Label Text="AVG SPEED"
+                               TextColor="#F7F7F7"
+                               FontSize="{Binding FontVerySmall}"
+                               Margin="5,0,0,0"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="StartAndExpand"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="framd.ttf#Franklin Gothic Medium"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <BoxView BackgroundColor="#69BCBO"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}">
+                        </BoxView>                       
+                        <!--BINDING AVG SPEED-->
+                        <Label Text="{Binding AHCyclingAvgSpeed, StringFormat='{0:F1}'}"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           Margin="5,5,0,0"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--BINDING UNIT-->
+                        <Label Text="{Binding AHSettingsMeasurementUnitTxt, StringFormat='{0}/h'}"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        
+
+                    </RelativeLayout>                    
+                    <RelativeLayout Margin="5,0,0,0" 
+                                    BackgroundColor="#101A1C"
+                                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
+                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                        <Label Text="WEATHER"
+                               TextColor="#F7F7F7"
+                               FontSize="{Binding FontVerySmall}"
+                               Margin="5,0,0,0" 
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="StartAndExpand"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="framd.ttf#Franklin Gothic Medium"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <BoxView BackgroundColor="#69BCBO"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}">
+                        </BoxView>
+                        <!--BINDING TEMPERATURE-->
+                        <Label Text="{Binding AHTemperature}"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           Margin="0,0,0,5"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.9}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--BINDING UNIT-->
+                        <Label Text="°C"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontMedium}" 
+                           
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <!-- BTN START JOURNEY-->
+                <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <Label Text="{Binding btnStartJourneyTxt}"
+                           FontSize="{Binding FontBig}" 
+                           TextColor="#F7F7F7"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="btnStartJourney_Tapped">                                
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Color="#F7e25D"
+                             HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             WidthRequest="250"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        
+                    </BoxView>
+                    
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+
+    <ContentPage>
+        <!--Second Page : STATISTIC-->
+        <ContentPage.Content>
+            <StackLayout>
+                <RelativeLayout BackgroundColor="#213233">
+                    <!--HEADER-->
+                    <RelativeLayout Margin="5,10,5,5"                                
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="STATISTIC"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontBig}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </RelativeLayout>
+                    <!--LIST VIEW : STATISTIC-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                            Margin="15,10,15,5"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <ListView x:Name="JourneysListView" IsVisible="True"                                  
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical"
+                                                 Padding="10,5,10,5"
+                                                 >
+                                            <StackLayout Orientation="Horizontal"
+                                                     BackgroundColor="#2d5642"
+                                                     Margin="0,5,0,5"
+                                                     HeightRequest="50"
+                                                     
+                                                     >
+                                                <RelativeLayout 
+                                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                                                    <Label Text="{Binding StartTime, StringFormat='{0:dd\\.MM\\.yyyy\}'}"
+                                                       TextColor="#F7F7F7"
+                                                       FontSize="{Binding FontBig}"
+                                                       VerticalOptions="CenterAndExpand"
+                                                           HeightRequest="50"
+                                                       HorizontalOptions="StartAndExpand"
+                                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+                                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                                       
+                                                       
+                                                       >
+                                                        <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+                                                    <Label Text="{Binding Duration, StringFormat='{0:hh\\:mm\\:ss\}'}"
+                                                       TextColor="#F7F7F7"
+                                                       FontSize="{Binding FontBig}"
+                                                       VerticalOptions="CenterAndExpand"
+                                                       HorizontalOptions="CenterAndExpand"
+                                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                                      
+                                                       >
+                                                        <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+
+                                                    <Label Text="{Binding Distance, StringFormat='{0:F1}'}"
+                                                       TextColor="#F7F7F7"
+                                                       FontSize="{Binding FontBig}"
+                                                       VerticalOptions="CenterAndExpand"
+                                                       HorizontalOptions="EndAndExpand"
+                                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.85}"
+                                                       
+                                                       >
+                                                        <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+                                                    <Label Text="{Binding Unit}"
+                                                       TextColor="#F7F7F7"
+                                                       FontSize="{Binding FontBig}"
+                                                       VerticalOptions="CenterAndExpand"
+                                                       HorizontalOptions="EndAndExpand"
+                                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-10}"
+                                                      
+                                                       >                                                        
+                                                        <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+                                                </RelativeLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </RelativeLayout>
+
+                    <!-- Rest of Statistic -->
+                    <!--TOTAL DISTANCE-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="TOTAL DISTANCE"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!-- Binding : Total Distance -->
+                        <Label Text="{Binding AHStatisticsTotalDistance, StringFormat='{0:F1}'}"
+                           
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="EndAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.87}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--Binding : Unit-->
+                        <Label Text="{Binding AHSettingsMeasurementUnitTxt}"
+                           Margin="0,0,15,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="EndAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </RelativeLayout>
+                    <!--TOTAL DURATION-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="TOTAL DURATION"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!-- Binding : Total Duration -->
+                        <Label Text="{Binding AHStatisticsTotalDuration, StringFormat='{0:hh\\:mm\\:ss\}'}"
+                           Margin="0,0,15,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="EndAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </RelativeLayout>
+                    <!--AVG SPEED-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="AVG SPEED"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!-- Binding : Avg Speed -->
+                        <Label Text="{Binding AHStatisticsAvgSpeed, StringFormat='{0:F1}'}"
+                           
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="EndAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           Margin="0,0,60,0"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--Binding : Unit-->
+                        <Label Text="{Binding AHSettingsMeasurementUnitTxt, StringFormat='{0}/h'}"
+                           Margin="0,0,15,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="EndAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"   
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+
+    <ContentPage>
+        <!--Third Page : SETTINGS-->
+        <ContentPage.Content>
+            <StackLayout>
+                <RelativeLayout BackgroundColor="#213233">
+                    <!--HEADER-->
+                    <RelativeLayout Margin="5,10,5,5"                                
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="SETTINGS"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontBig}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </RelativeLayout>
+
+                    
+
+                    <!--UNIT-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="WHEEL SIZE (IN MM)"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>                        
+                        <!--Binding : Unit-->
+                        <Entry  Text="{Binding AHSettingsWheelRadius, Mode=TwoWay}"   
+                                FontSize="{Binding FontVerySmall}"
+                                
+                                Keyboard="Numeric"
+                                TextColor="#101A1C"  
+                                BackgroundColor="#F7E25D"
+                                VerticalOptions="CenterAndExpand"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor= 0.8}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor= -0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1.2}"> 
+                            
+                        </Entry>
+                    </RelativeLayout>
+
+
+                    <!--POLE PAIRS-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="POLE"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--Binding : Unit-->
+                        <Entry  Text="{Binding AHSettingsPolePairs, Mode=TwoWay}"                                
+                                
+                                FontSize="{Binding FontVerySmall}"
+                                Keyboard="Numeric"
+                                TextColor="#101A1C"  
+                                BackgroundColor="#F7E25D"
+                                VerticalOptions="CenterAndExpand"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor= 0.8}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor= -0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1.2}">
+
+                        </Entry>
+                    </RelativeLayout>
+
+                    <!--UNIT-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="MEASUREMENT UNIT"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--Binding : Unit-->
+                        <Picker x:Name="pickerMeasurementUnit"
+                                SelectedIndex="{Binding AHSettingsMeasurementUnit, Mode=TwoWay}"
+                                
+                                TextColor="#101A1C"                                  
+                                BackgroundColor="#F7E25D"
+                                VerticalOptions="CenterAndExpand"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor= 0.8}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor= -0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1.2}">
+                            <Picker.Items>
+                                <x:String>km</x:String>
+                                <x:String>miles</x:String>
+                            </Picker.Items>
+                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                        </Picker>
+                    </RelativeLayout>
+                    
+                    <!--BTN RESET SETTINGS-->
+                    <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="RESET SETTINGS"
+                           FontSize="{Binding FontMedium}" 
+                           TextColor="#F7F7F7"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="btnResetSettings_Tapped"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Color="#F7e25D"
+                             HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             WidthRequest="250"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                        </BoxView>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage>
+        <!--Fourth Page : BLUETOOTH-->
+        <ContentPage.Content>
+            <StackLayout>
+                <RelativeLayout BackgroundColor="#213233">
+                    <!--HEADER-->
+                    <RelativeLayout Margin="5,10,5,5"                                
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="BLUETOOTH"
+                           TextColor="#F7F7F7"
+                           FontSize="{Binding FontBig}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </RelativeLayout>
+                    <!--STATUS-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="STATUS"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!-- Binding : Bluetooth Status -->
+                        <Label Text="{Binding AHBluetoothStatus}"                           
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="EndAndExpand"
+                               Margin="0,0,15,0"
+                               FontSize="{Binding FontSmall}"
+                               TextColor="#F7F7F7"                           
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>                        
+                    </RelativeLayout>
+                    <!--BLE DEVICE NAME-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                                Margin="15,10,15,10"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="BLE NAME"
+                           Margin="15,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="{Binding FontSmall}"
+                           TextColor="#F7F7F7"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!-- Binding : BLE DEVICE NAME -->
+                        <Label Text="{Binding AHBluetoothDeviceName}"                           
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="EndAndExpand"
+                               Margin="0,0,15,0"
+                               FontSize="{Binding FontSmall}"
+                               TextColor="#F7F7F7"                           
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </RelativeLayout>
+                   
+                    <!--LIST VIEW : BLUETOOTH DEVICES-->
+                    <RelativeLayout BackgroundColor="#101A1C"
+                            Margin="15,10,15,5"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <ListView x:Name="BluetoothDevicesListView" IsVisible="True"  ItemSelected="BluetoothDeviceSelected"                                
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical"
+                                                 Padding="10,5,10,5">
+                                            <StackLayout Orientation="Horizontal"
+                                                     BackgroundColor="#2d5642"
+                                                     Margin="0,5,0,5"
+                                                     HeightRequest="50"
+                                                     >
+                                                <RelativeLayout 
+                                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                                                    <Label Text="{Binding Name, StringFormat='{0:dd\\.MM\\.yyyy\}'}"
+                                                       TextColor="#F7F7F7"
+                                                       FontSize="{Binding FontBig}"
+                                                       VerticalOptions="CenterAndExpand"
+                                                       HorizontalOptions="StartAndExpand"
+                                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+                                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                                       
+                                                       >
+                                                        <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+
+                                                </RelativeLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </RelativeLayout>
+
+                    <!--BTN SCAN-->
+                    <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="SCAN"
+                           FontSize="{Binding FontMedium}" 
+                           TextColor="#F7F7F7"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="btnScanBluetooth_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Color="#F7e25D"
+                             HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             WidthRequest="250"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                        </BoxView>
+
+                    </RelativeLayout>
+                    <!--BTN CONNECT-->
+                    <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                        <Label Text="CONNECT"
+                           FontSize="{Binding FontMedium}" 
+                           TextColor="#F7F7F7"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="XOUMEG_S57.ttf#XOUMEG S57"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="btnConnectBluetooth_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Color="#F7e25D"
+                             HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             WidthRequest="250"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                        </BoxView>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+</CarouselPage>
