@@ -1,7 +1,7 @@
 # Cyclone
 
 ---------------------------
-Connect your sensor via Bluetooth and see how fast you are cycling on you phone!
+Connect your sensor via Bluetooth and see how fast you are cycling on your phone!
 ---------------------------
 
 This app let you connect your speed sensor on your bike to your phone vie Bluetooth. Furthermore followings are the feature of the app:
